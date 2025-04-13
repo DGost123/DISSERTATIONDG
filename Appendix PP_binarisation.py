@@ -27,59 +27,6 @@ pd.set_option('display.max_seq_items', None)
 pd.set_option('display.max_colwidth', 500)
 pd.set_option('expand_frame_repr', True)
 
-
-# In[279]:
-
-
-# set up connection to the SQL server
-conn = pyodbc.connect('Driver={SQL Server};'
-'Server=MCS-TEST-SQL;'
-'Database=MCS;'
-'Trusted_Connection=yes;')
-
-
-# In[280]:
-
-
-# SQL query
-defaults_sql = '''
-SELECT * FROM Dataset
-
-'''
-
-
-# In[281]:
-
-
-# execute query and save results to Pandas dataframe
-defaults = pd.read_sql(defaults_sql.format('[MCS].[NT0001\BF4510].[Dataset]', '[MCS].[NT0001\BF4510].[Dataset]', '[MCS].[NT0001\BF4510].[Dataset]', '[MCS].[NT0001\BF4510].[Dataset]'), conn)
-defaults.shape
-
-
-# In[282]:
-
-
-# SQL query for test set
-defaults_sql_test = '''
-SELECT * FROM Dataset_test
-
-'''
-
-
-# In[283]:
-
-
-# execute query and save results to Pandas dataframe
-defaults_test = pd.read_sql(defaults_sql_test.format('[MCS].[NT0001\BF4510].[Dataset_test]', '[MCS].[NT0001\BF4510].[Dataset_test]', '[MCS].[NT0001\BF4510].[Dataset_test]', '[MCS].[NT0001\BF4510].[Dataset_test]'), conn)
-defaults_test.shape
-
-
-# In[ ]:
-
-
-
-
-
 # In[284]:
 
 
